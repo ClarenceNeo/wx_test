@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Router, Route, Link } from 'react-router'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { blockStatement } from '@babel/types';
 
 const SectionGroup = styled.div`
     background-color: #ffffff;
@@ -67,7 +68,7 @@ const SectionView = styled.span`
 
 const Section = props => (
 	<SectionGroup>
-		<SectionLeft>
+        <SectionLeft>
             <SectionTitle>{props.title}</SectionTitle>
             <SectionInfo>
                 <SectionCommend>推荐</SectionCommend>
@@ -79,14 +80,16 @@ const Section = props => (
 	</SectionGroup>
 )
 
-export class MainList extends React.Component {
+export class HomeList extends React.Component {
     render() {
         return (
-            <Section 
-             image={require('../../images/icon-arrow.png')}
-             title="备考课程再度升级，各色班型强力助考，提前报考优惠更多。"
-             view="218"
-            />
+            <Link to={`/show`}>
+                <Section 
+                image={require('../../images/icon-arrow.png')}
+                title="备考课程再度升级，各色班型强力助考，提前报考优惠更多。"
+                view="218"
+                />
+            </Link>
         )
     }
 }

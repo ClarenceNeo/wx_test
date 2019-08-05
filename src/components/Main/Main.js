@@ -1,19 +1,22 @@
 import React from 'react';
 import { TabBar } from 'antd-mobile';
-import { MenuBar } from '../MenuBar/MenuBar';
-import { MainList } from '../MainList/MainList';
+import { Show } from '../Show/Show';
+import { Home } from '../Home/Home';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-export class TabBarList extends React.Component {
+
+export class Main extends React.Component {
     constructor(props) {
-        super(props);
-        this.state = {
-          selectedTab: 'kdTab',
-          hidden: false,
-        };
-      }
-    
-      render() {
-        return (
+      super(props);
+      this.state = {
+        selectedTab: 'kdTab',
+        hidden: false,
+      };
+    }
+  
+    render() {
+      return (
+        <Router>
           <div style={{ position: 'fixed', height: '100%', width: '100%', top: 0 }}>
             <TabBar
               unselectedTintColor="#949494"
@@ -47,8 +50,12 @@ export class TabBarList extends React.Component {
                 }}
                 data-seed="logId"
               >
-                <MenuBar />
-                <MainList />
+
+                <Switch>
+                  <Route path="/show" component={ Show } />
+                  <Route path="/" component={ Home } />
+                </Switch>
+                
               </TabBar.Item>
               <TabBar.Item
                 icon={
@@ -107,6 +114,7 @@ export class TabBarList extends React.Component {
               </TabBar.Item>
             </TabBar>
           </div>
-        );
-      }
+        </Router>
+      );
+    }
 }
