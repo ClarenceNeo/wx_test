@@ -1,3 +1,10 @@
 .am-picker-col:first-child {
     max-width: 100px;
 }
+
+.menubar-icon {
+    width: .28rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -0.05rem;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Picker, Button } from 'antd-mobile';
+import arrow from '../../images/nav-title-icon.png';
 
 import styles from "./MenuBar.css"
 
@@ -67,7 +68,7 @@ export class MenuBar extends React.Component {
                     value={['助理医师','临床执业助理医师（笔试）']}
                     cols={2}
                 >
-                    <Button>临床执业助理医师（笔试）</Button>
+                    <Button style={{fontSize: '.33rem'}}>临床执业助理医师（笔试）<img className="menubar-icon" src={arrow} alt=""/></Button>
                 </Picker>
             </div>
         )
