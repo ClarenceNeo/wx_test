@@ -1,0 +1,61 @@
+{
+    "lczlyisbs": {
+        "name": "临床执业助理医师（笔试）",
+        "articleList": [
+            {
+                "id": 1,
+                "title": "备考课程再度升级，各色班型强力助考，提前报考优惠更多。",
+                "hot": "true",
+                "commend": "false",
+                "view": "215"
+            },
+            {
+                "id": 2,
+                "title": "备考课程再度升级，各色班型强力助考，提前报考优惠更多。",
+                "hot": "true",
+                "commend": "false",
+                "view": "215"
+            },
+            {
+                "id": 3,
+                "title": "备考课程再度升级，各色班型强力助考，提前报考优惠更多。",
+                "hot": "true",
+                "commend": "false",
+                "view": "215"
+            },
+            {
+                "id": 4,
+                "title": "备考课程再度升级，各色班型强力助考，提前报考优惠更多。",
+                "hot": "true",
+                "commend": "false",
+                "view": "215"
+            }
+        ]
+    },
+    "lczlyissj": {
+        "name": "临床执业助理医师（实践技能）",
+        "articleList": [
+            {
+                "id": 1,
+                "title": "2备考课程再度升级，各色班型强力助考，提前报考优惠更多。",
+                "hot": "true",
+                "commend": "false",
+                "view": "215"
+            },
+            {
+                "id": 2,
+                "title": "2备考课程再度升级，各色班型强力助考，提前报考优惠更多。",
+                "hot": "true",
+                "commend": "false",
+                "view": "215"
+            },
+            {
+                "id": 3,
+                "title": "2备考课程再度升级，各色班型强力助考，提前报考优惠更多。",
+                "hot": "true",
+                "commend": "false",
+                "view": "215"
+            }
+        ]
+    }
+}

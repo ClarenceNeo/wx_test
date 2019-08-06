@@ -11,11 +11,11 @@ const subject = [
         children: [
             {
                 label: '临床执业助理医师（笔试）',
-                value: '临床执业助理医师（笔试）',
+                value: 'lczlyisbs',
             },
             {
                 label: '临床执业助理医师（实践技能）',
-                value: '临床执业助理医师（实践技能）',
+                value: 'lczlyissj',
             },
             {
                 label: '中医执业助理医师（笔试）',
@@ -49,26 +49,21 @@ const subject = [
 
 export class MenuBar extends React.Component {
     state = {
-        pickerValue: "临床执业助理医师（笔试）",
-    };
-    onChange = (value) => {
-        console.log(value);
-        this.setState({
-            value,
-        });
-    }
-    onScrollChange = (value) => {
-        console.log(value);
+        titleList: {
+            'lczlyisbs': '临床执业助理医师（笔试）',
+            'lczlyissj': '临床执业助理医师（实践技能）'
+        }
     }
     render() {
         return (
             <div>
                 <Picker
                     data={subject}
-                    value={['助理医师','临床执业助理医师（笔试）']}
+                    value={this.props.pickerValue}
                     cols={2}
+                    onChange={this.props.onChange}
                 >
-                    <Button style={{fontSize: '.33rem'}}>临床执业助理医师（笔试）<img className="menubar-icon" src={arrow} alt=""/></Button>
+                    <Button style={{fontSize: '.33rem'}}>{this.props.pickerTitle}<img className="menubar-icon" src={arrow} alt=""/></Button>
                 </Picker>
             </div>
         )

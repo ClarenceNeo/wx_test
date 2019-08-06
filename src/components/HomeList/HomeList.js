@@ -11,6 +11,7 @@ const SectionGroup = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 0 .2rem;
+    color: #333333;
 `;
 const SectionLeft = styled.div`
     width: 6.5rem;
@@ -81,15 +82,27 @@ const Section = props => (
 )
 
 export class HomeList extends React.Component {
+    constructor( props ) {
+        super( props );
+        this.state = {
+        }
+    }
+    componentWillMount() {
+        // console.log(this.state.list)
+    }
     render() {
         return (
-            <Link to={`/show`}>
-                <Section 
-                image={require('../../images/icon-arrow.png')}
-                title="备考课程再度升级，各色班型强力助考，提前报考优惠更多。"
-                view="218"
-                />
-            </Link>
+            <div>
+                {this.props.list.map(item => (
+                    <Link to={`/show/${item.id}`} key={item.id}>
+                        <Section 
+                        image={require('../../images/icon-arrow.png')}
+                        title={item.title}
+                        view={item.view}
+                        />
+                    </Link>
+                ))}
+            </div>
         )
     }
 }
