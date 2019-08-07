@@ -92,9 +92,9 @@ export class HomeList extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div style={{"overflowY":"scroll"}}>
                 {this.props.list.map(item => (
-                    <Link to={`/show/${item.id}`} key={item.id}>
+                    <Link to={`/show/${this.props.cat}/${item.id}`} key={item.id}>
                         <Section 
                         image={require('../../images/icon-arrow.png')}
                         title={item.title}

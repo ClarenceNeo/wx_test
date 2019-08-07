@@ -63,7 +63,7 @@ export class MenuBar extends React.Component {
                     cols={2}
                     onChange={this.props.onChange}
                 >
-                    <Button style={{fontSize: '.33rem'}}>{this.props.pickerTitle}<img className="menubar-icon" src={arrow} alt=""/></Button>
+                    <Button style={{fontSize: '.33rem',"height":".9rem","lineHeight": ".9rem"}}>{this.props.pickerTitle}<img className="menubar-icon" src={arrow} alt=""/></Button>
                 </Picker>
             </div>
         )
