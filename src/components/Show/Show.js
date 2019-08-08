@@ -1,6 +1,6 @@
 import React from 'react';
 import subjectList from '../../data/subjectList';
-import style from './Show.css';
+import './Show.css';
 
 export class Show extends React.Component {
     constructor( props ) {
@@ -19,7 +19,7 @@ export class Show extends React.Component {
     }
     render() {
         return (
-            <div style={{"overflow-y":"scroll","height":"100%"}}>
+            <div style={{"overflowY":"scroll","height":"100%"}}>
                 <div className="show-area">
                     <h2 className="show-area-title">{this.state.article.title}</h2>
                     <span className="show-area-read">阅读：{this.state.article.view}</span>

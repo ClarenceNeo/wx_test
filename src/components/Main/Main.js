@@ -3,7 +3,7 @@ import { TabBar } from 'antd-mobile';
 import { Show } from '../Show/Show';
 import { Home } from '../Home/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import style from './Main.css';
+import './Main.css';
 
 export class Main extends React.Component {
     constructor(props) {
@@ -38,7 +38,8 @@ export class Main extends React.Component {
                   selectedIcon={<div style={{
                     width: '22px',
                     height: '22px',
-                    background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+                    background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
+                    }}
                   />
                   }
                   selected={this.state.selectedTab === 'kdTab'}

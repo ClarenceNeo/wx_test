@@ -2,7 +2,7 @@ import React from 'react';
 import { Picker, Button } from 'antd-mobile';
 import arrow from '../../images/nav-title-icon.png';
 
-import styles from "./MenuBar.css"
+import "./MenuBar.css"
 
 const subject = [
     {

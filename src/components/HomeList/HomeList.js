@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { blockStatement } from '@babel/types';
 
 const SectionGroup = styled.div`
@@ -72,8 +72,8 @@ const Section = props => (
         <SectionLeft>
             <SectionTitle>{props.title}</SectionTitle>
             <SectionInfo>
-                <SectionCommend>推荐</SectionCommend>
-                <SectionHot>热门</SectionHot>
+                <SectionCommend className={ props.commend=="1" ? "" : "hidden" }>推荐</SectionCommend>
+                <SectionHot className={ props.hot=="1" ? "" : "hidden" }>热门</SectionHot>
                 <SectionView>阅读：{props.view}</SectionView>
             </SectionInfo>
         </SectionLeft>
@@ -96,9 +96,11 @@ export class HomeList extends React.Component {
                 {this.props.list.map(item => (
                     <Link to={`/show/${this.props.cat}/${item.id}`} key={item.id}>
                         <Section 
-                        image={require('../../images/icon-arrow.png')}
-                        title={item.title}
-                        view={item.view}
+                            image={require('../../images/icon-arrow.png')}
+                            title={item.title}
+                            view={item.view}
+                            hot={item.hot}
+                            commend={item.commend}
                         />
                     </Link>
                 ))}
