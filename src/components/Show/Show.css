@@ -24,3 +24,60 @@
     line-height: 1.5;
     padding-bottom: .15rem;
 }
+
+.show-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.show-block-wrapper {
+    width: 100%;
+    background: #fff;
+    text-align: center;
+}
+
+.show-all {
+    width: 7.1rem;
+    height: .7rem;
+    line-height: .7rem;
+    background-color: #6e88f5;
+    display: inline-block;
+    color: #fff;
+}
+
+.show-all.am-button-active {
+    background-color: #3d57bd;
+}
+
+.show-other-title {
+    width: 100%;
+    position: relative;
+    height: .4rem;
+    background-color: #f1f1f1;
+    line-height: .4rem;
+    text-align: left;
+    padding-left: .2rem;
+}
+
+.show-other-title::before {
+    position: absolute;
+    content: '';
+    width: .04rem;
+    height: .27rem;
+    background: #ff9600;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.show-other {
+    height: 3.4rem;
+    overflow: hidden;
+    /* overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; */
+}

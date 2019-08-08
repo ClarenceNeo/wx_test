@@ -1,3 +1,8 @@
 .am-tab-bar-item {
     overflow-y: hidden;
 }
+.hidden { display:none; }
+.scroll-wrapper {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}

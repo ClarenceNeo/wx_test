@@ -92,7 +92,7 @@ export class HomeList extends React.Component {
     }
     render() {
         return (
-            <div style={{"overflowY":"scroll"}}>
+            <div style={{"overflowY":"scroll"}} className="scroll-wrapper">
                 {this.props.list.map(item => (
                     <Link to={`/show/${this.props.cat}/${item.id}`} key={item.id}>
                         <Section 

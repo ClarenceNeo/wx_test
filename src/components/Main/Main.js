@@ -32,13 +32,13 @@ export class Main extends React.Component {
                   icon={<div style={{
                     width: '22px',
                     height: '22px',
-                    background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
+                    background: 'url(http://www.cyikao.com/zg/webapp_kd19/images/kd.png) center center /  21px 21px no-repeat' }}
                   />
                   }
                   selectedIcon={<div style={{
                     width: '22px',
                     height: '22px',
-                    background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
+                    background: 'url(http://www.cyikao.com/zg/webapp_kd19/images/kd-active.png) center center /  21px 21px no-repeat'
                     }}
                   />
                   }
@@ -63,14 +63,14 @@ export class Main extends React.Component {
                     <div style={{
                       width: '22px',
                       height: '22px',
-                      background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
+                      background: 'url(http://www.cyikao.com/zg/webapp_kd19/images/tk.png) center center /  21px 21px no-repeat' }}
                     />
                   }
                   selectedIcon={
                     <div style={{
                       width: '22px',
                       height: '22px',
-                      background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
+                      background: 'url(http://www.cyikao.com/zg/webapp_kd19/images/tk-active.png) center center /  21px 21px no-repeat' }}
                     />
                   }
                   title="题库"
@@ -84,21 +84,23 @@ export class Main extends React.Component {
                   }}
                   data-seed="logId1"
                 >
-                  <iframe frameBorder="0" width="100%" height="100%" src="http://www.cyikao.com/zg/app/" title="题库"></iframe>
+                  <div className="scroll-wrapper" style={{"height": "100%"}}>
+                    <iframe frameBorder="0" width="100%" height="100%" src="http://www.cyikao.com/zg/app/" title="题库"></iframe>
+                  </div>
                 </TabBar.Item>
                 <TabBar.Item
                   icon={
                     <div style={{
                       width: '22px',
                       height: '22px',
-                      background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
+                      background: 'url(http://www.cyikao.com/zg/webapp_kd19/images/course.png) center center /  21px 21px no-repeat' }}
                     />
                   }
                   selectedIcon={
                     <div style={{
                       width: '22px',
                       height: '22px',
-                      background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
+                      background: 'url(http://www.cyikao.com/zg/webapp_kd19/images/course-active.png) center center /  21px 21px no-repeat' }}
                     />
                   }
                   title="课程"
@@ -111,7 +113,9 @@ export class Main extends React.Component {
                     });
                   }}
                 >
-                  <iframe frameBorder="0" width="100%" height="100%" src="http://e.cyikao.com" title="课程"></iframe>
+                  <div className="scroll-wrapper" style={{"height": "100%"}}>
+                    <iframe frameBorder="0" width="100%" height="100%" src="http://e.cyikao.com" title="课程"></iframe>
+                  </div>
                 </TabBar.Item>
               </TabBar>
             </div>

@@ -4,7 +4,6 @@ import { MenuBar } from '../MenuBar/MenuBar';
 import { HomeList } from '../HomeList/HomeList';
 import { Banner } from '../Banner/Banner'
 
-import './Home.css';
 import subjectList from '../../data/subjectList';
 
 const tabs = [
@@ -40,7 +39,7 @@ export class Home extends Component {
             const updateState = JSON.parse(localStorage.getItem('zgyk_kd19_state'));
             this.setState({
                 list: subjectList[updateState.pickerValue[1]].articleList,
-                bestList: subjectList[initialState.pickerValue[1]].articleList.filter(item=>item.best == "1"),
+                bestList: subjectList[updateState.pickerValue[1]].articleList.filter(item=>item.best == "1"),
                 pickerValue: updateState.pickerValue,
                 pickerTitle: updateState.pickerTitle
             })
@@ -70,7 +69,7 @@ export class Home extends Component {
                 <MenuBar pickerValue={this.state.pickerValue} onChange={this.handlePicker} pickerTitle={this.state.pickerTitle} />
                 {/* <HomeList list={this.state.list} cat={this.state.pickerValue[1]} /> */}
                 <div style={{"height": "100%","paddingTop": "43.5px","marginTop": "-43.5px"}}>
-                    <Tabs tabs={tabs} initialPage={0} animated={true} useOnPan={false}>
+                    <Tabs tabs={tabs} initialPage={0} animated={true} useOnPan={false} swipeable={false}>
                         <div style={{ "display": "flex", "flexDirection": "column"}}>
                             <WhiteSpace />
                                 <Banner />
