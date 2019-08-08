@@ -3,7 +3,7 @@ import subjectList from '../../data/subjectList';
 import './Show.css';
 import { Button, WhiteSpace, Modal } from 'antd-mobile';
 import { HomeList } from '../HomeList/HomeList';
-import qr from '../../images/qr.png'
+import { withRouter } from 'react-router'
 
 function closest(el, selector) {
 const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
@@ -16,7 +16,7 @@ const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesS
     return null;
 }
 
-export class Show extends React.Component {
+class Show extends React.Component {
     constructor( props ) {
         super( props );
         this.state = {
@@ -27,8 +27,8 @@ export class Show extends React.Component {
             cat: ""
         }
     }
-    componentWillMount() {
-        const params = this.props.location.pathname.substring(6).split("/");
+    fetchData(pathname) {
+        const params = pathname.substring(6).split("/");
         const article = subjectList[params[0]].articleList.filter(item => item.id == params[1])[0];
         let list = [];
         if(article.best == '1') {
@@ -41,6 +41,14 @@ export class Show extends React.Component {
             list: list,
             cat: params[0]
         })
+    }
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.location.pathname != this.props.location.pathname) {
+            this.fetchData(nextProps.location.pathname);
+        }
+    }
+    componentWillMount() {
+        this.fetchData(this.props.location.pathname);
     }
     showModal = key => (e) => {
         e.preventDefault(); // 修复 Android 上点击穿透
@@ -101,10 +109,12 @@ export class Show extends React.Component {
                     <div>
                         <span style={{ "color": "#ff8400"}}>请长按此指纹,</span>识别二维码并关注
                         <WhiteSpace />
-                        <img style={{"display":"inline-block",width: "4.7rem",height:"2rem"}} src={qr} alt="二维码"/>
+                        <img style={{"display":"inline-block",width: "4.7rem",height:"2rem"}} src="http://www.cyikao.com/zg/webapp_kd19/images/ys-wx.png" alt="二维码"/>
                     </div>
                 </Modal>
             </div>
         )
     }
 }
+
+export default withRouter(Show)

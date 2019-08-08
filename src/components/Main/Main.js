@@ -1,8 +1,8 @@
 import React from 'react';
 import { TabBar } from 'antd-mobile';
-import { Show } from '../Show/Show';
+import Show  from '../Show/Show';
 import { Home } from '../Home/Home';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './Main.css';
 
 export class Main extends React.Component {
@@ -15,6 +15,7 @@ export class Main extends React.Component {
     }
   
     render() {
+
       return (
         <Router>
             <div style={{ position: 'fixed', height: '100%', width: '100%', top: 0 }}>
@@ -48,15 +49,14 @@ export class Main extends React.Component {
                     this.setState({
                       selectedTab: 'kdTab',
                     });
+                    // window.location.href = "http://cyikao.com";
                   }}
                   data-seed="logId"
                 >
-
                   <Switch>
                     <Route path="/show" component={ Show } />
                     <Route path="/" component={ Home } />
                   </Switch>
-                  
                 </TabBar.Item>
                 <TabBar.Item
                   icon={
