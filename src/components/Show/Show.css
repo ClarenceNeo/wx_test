@@ -81,3 +81,7 @@
     /* overflow-y: scroll;
     -webkit-overflow-scrolling: touch; */
 }
+
+#showPage {
+    -webkit-overflow-scrolling: touch;
+}

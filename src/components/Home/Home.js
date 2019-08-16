@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Tabs, WhiteSpace } from 'antd-mobile';
 import { MenuBar } from '../MenuBar/MenuBar';
 import { HomeList } from '../HomeList/HomeList';
-import { Banner } from '../Banner/Banner'
+import { Banner } from '../Banner/Banner';
+import './Home.css';
 
 import subjectList from '../../data/subjectList';
 
@@ -70,13 +71,13 @@ export class Home extends Component {
                 {/* <HomeList list={this.state.list} cat={this.state.pickerValue[1]} /> */}
                 <div style={{"height": "100%","paddingTop": "43.5px","marginTop": "-43.5px"}}>
                     <Tabs tabs={tabs} initialPage={0} animated={true} useOnPan={false} swipeable={false}>
-                        <div style={{ "display": "flex", "flexDirection": "column"}}>
+                        <div style={{ "display": "flex", "flexDirection": "column"}} className="home-tab-content">
                             <WhiteSpace />
                                 <Banner />
                             <WhiteSpace />
                             <HomeList list={this.state.list} cat={this.state.pickerValue[1]} />
                         </div>
-                        <div style={{ "display": "flex", "flexDirection": "column"}}>
+                        <div style={{ "display": "flex", "flexDirection": "column"}} className="home-tab-content">
                             <WhiteSpace />
                                 <Banner />
                             <WhiteSpace />

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { blockStatement } from '@babel/types';
+import './HomeList.css';
 
 const SectionGroup = styled.div`
     background-color: #ffffff;

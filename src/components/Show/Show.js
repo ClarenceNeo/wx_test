@@ -45,6 +45,7 @@ class Show extends React.Component {
     componentWillReceiveProps(nextProps) {
         if(nextProps.location.pathname != this.props.location.pathname) {
             this.fetchData(nextProps.location.pathname);
+            document.getElementById('showPage').scroll(0, 0);
         }
     }
     componentWillMount() {
@@ -74,7 +75,7 @@ class Show extends React.Component {
     }
     render() {
         return (
-            <div style={{"overflowY":"scroll","height":"100%"}}>
+            <div style={{"overflowY":"scroll","height":"100%"}} id="showPage">
                 <div className="show-area">
                     <h2 className="show-area-title">{this.state.article.title}</h2>
                     <span className="show-area-read">阅读：{this.state.article.view}</span>
