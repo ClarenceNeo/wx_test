@@ -1,9 +1,11 @@
 import React from 'react';
-import subjectList from '../../data/subjectList';
+// import subjectList from '../../data/subjectList';
 import './Show.css';
 import { Button, WhiteSpace, Modal } from 'antd-mobile';
 import { HomeList } from '../HomeList/HomeList';
 import { withRouter } from 'react-router'
+
+var subjectList = test;
 
 function closest(el, selector) {
 const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
@@ -32,9 +34,9 @@ class Show extends React.Component {
         const article = subjectList[params[0]].articleList.filter(item => item.id == params[1])[0];
         let list = [];
         if(article.best == '1') {
-            list = subjectList[params[0]].articleList.filter(item => item.best == "1").sort(function(){return Math.random() > 0.5});
+            list = subjectList[params[0]].articleList.filter(item => item.best == "1").sort(function(){ return Math.random() - 0.5; });
         } else {
-            list = subjectList[params[0]].articleList.sort(function(){return Math.random() > 0.5});
+            list = subjectList[params[0]].articleList.sort(function(){ return Math.random() - 0.5; });
         }
         this.setState({
             article: article,
@@ -75,17 +77,19 @@ class Show extends React.Component {
     }
     render() {
         return (
-            <div style={{"overflowY":"scroll","height":"100%"}} id="showPage">
-                <div className="show-area">
-                    <h2 className="show-area-title">{this.state.article.title}</h2>
-                    <span className="show-area-read">阅读：{this.state.article.view}</span>
-                    <div className="show-area-content" dangerouslySetInnerHTML={{__html: this.state.article.html}}>
+            <div style={{"height":"100%"}}>
+                <div style={{"height":"100%"}} id="showPage">
+                    <div className="show-area">
+                        <h2 className="show-area-title">{this.state.article.title}</h2>
+                        <span className="show-area-read">阅读：{this.state.article.view}</span>
+                        <div className="show-area-content" dangerouslySetInnerHTML={{__html: this.state.article.html}}>
+                        </div>
                     </div>
-                </div>
-                <WhiteSpace />
-                <div className="show-other-title">相关阅读</div>
-                <div className="show-other">
-                    <HomeList list={this.state.list} cat={this.state.cat} />
+                    <WhiteSpace />
+                    <div className="show-other-title">相关阅读</div>
+                    <div className="show-other">
+                        <HomeList list={this.state.list} cat={this.state.cat} />
+                    </div>
                 </div>
                 <div className={this.state.block ? "show-block" : "show-block hidden"}>
                     <div className="show-block-wrapper">

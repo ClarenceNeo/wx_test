@@ -5,7 +5,9 @@ import { HomeList } from '../HomeList/HomeList';
 import { Banner } from '../Banner/Banner';
 import './Home.css';
 
-import subjectList from '../../data/subjectList';
+// import subjectList from '../../data/subjectList';
+
+var subjectList = test;
 
 const tabs = [
     { title: '最新' },
@@ -70,7 +72,7 @@ export class Home extends Component {
                 <MenuBar pickerValue={this.state.pickerValue} onChange={this.handlePicker} pickerTitle={this.state.pickerTitle} />
                 {/* <HomeList list={this.state.list} cat={this.state.pickerValue[1]} /> */}
                 <div style={{"height": "100%","paddingTop": "43.5px","marginTop": "-43.5px"}}>
-                    <Tabs tabs={tabs} initialPage={0} animated={true} useOnPan={false} swipeable={false}>
+                    <Tabs tabs={tabs} initialPage={0} animated={true} useOnPan={false} swipeable={false} className="home-tab-content-wrapper">
                         <div style={{ "display": "flex", "flexDirection": "column"}} className="home-tab-content">
                             <WhiteSpace />
                                 <Banner />

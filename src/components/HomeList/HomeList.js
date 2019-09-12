@@ -50,6 +50,9 @@ const SectionCommend = styled.span`
     line-height: .3rem;
     margin-right: .14rem;
     text-align: center;
+    &.hide {
+        display: none;
+    }
 `;
 const SectionHot = styled.span`
     display: inline-block;
@@ -62,6 +65,9 @@ const SectionHot = styled.span`
     line-height: .3rem;
     margin-right: .14rem;
     text-align: center;
+    &.hide {
+        display: none;
+    }
 `;
 const SectionView = styled.span`
     font-size: .22rem;
@@ -73,8 +79,8 @@ const Section = props => (
         <SectionLeft>
             <SectionTitle>{props.title}</SectionTitle>
             <SectionInfo>
-                <SectionCommend className={ props.commend=="1" ? "" : "hidden" }>推荐</SectionCommend>
-                <SectionHot className={ props.hot=="1" ? "" : "hidden" }>热门</SectionHot>
+                <SectionCommend className={ parseInt(props.commend) ? "" : "hide" }>推荐</SectionCommend>
+                <SectionHot className={ parseInt(props.hot) ? "" : "hide" }>热门</SectionHot>
                 <SectionView>阅读：{props.view}</SectionView>
             </SectionInfo>
         </SectionLeft>

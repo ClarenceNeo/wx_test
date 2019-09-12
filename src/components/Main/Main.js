@@ -2,10 +2,12 @@ import React from 'react';
 import { TabBar } from 'antd-mobile';
 import Show  from '../Show/Show';
 import { Home } from '../Home/Home';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import history from '../../history';
 import './Main.css';
 
 export class Main extends React.Component {
+
     constructor(props) {
       super(props);
       this.state = {
@@ -17,7 +19,7 @@ export class Main extends React.Component {
     render() {
 
       return (
-        <Router>
+        <Router history={history}>
             <div style={{ position: 'fixed', height: '100%', width: '100%', top: 0 }}>
               <TabBar
                 unselectedTintColor="#949494"
@@ -49,7 +51,8 @@ export class Main extends React.Component {
                     this.setState({
                       selectedTab: 'kdTab',
                     });
-                    // window.location.href = "http://cyikao.com";
+                    history.push(window.location.pathname);
+                    window.location.reload();
                   }}
                   data-seed="logId"
                 >
