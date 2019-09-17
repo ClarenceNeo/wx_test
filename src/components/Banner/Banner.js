@@ -3,15 +3,27 @@ import { Carousel } from 'antd-mobile';
 
 export class Banner extends React.Component {
   state = {
-    data: ['1', '2', '3'],
+    data: [
+      {
+        imgUrl: 'AiyWuByWklrrUDlFignR',
+        link: 'http://www.cyikao.com'
+      },
+      {
+        imgUrl: 'TekJlZRVCjLFexlOCuWn',
+        link: 'http://www.cyikao.com'
+      },
+      {
+        imgUrl: 'IJOtIlfsYdTyaDTRVrLI',
+        link: 'http://www.cyikao.com'
+      }],
   }
   componentDidMount() {
     // simulate img loading
-    setTimeout(() => {
-      this.setState({
-        data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-      });
-    }, 100);
+    // setTimeout(() => {
+    //   this.setState({
+    //     data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+    //   });
+    // }, 100);
   }
   render() {
     return (
@@ -25,11 +37,11 @@ export class Banner extends React.Component {
           {this.state.data.map(val => (
             <a
               key={val}
-              href="http://www.alipay.com"
+              href={`${val.link}`}
               style={{ display: 'inline-block', width: '100%', height: "2.3rem" }}
             >
               <img
-                src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+                src={`https://zos.alipayobjects.com/rmsportal/${val.imgUrl}.png`}
                 alt=""
                 style={{ width: '100%', verticalAlign: 'top' }}
                 onLoad={() => {

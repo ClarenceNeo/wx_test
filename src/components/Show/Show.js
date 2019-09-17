@@ -24,6 +24,7 @@ class Show extends React.Component {
         this.state = {
             modal1: false,
             block: true,
+            share: false,
             article: {},
             list: [],
             cat: ""
@@ -52,6 +53,15 @@ class Show extends React.Component {
     }
     componentWillMount() {
         this.fetchData(this.props.location.pathname);
+        if(this.state.block) {
+            console.log(1)
+        } else {
+            setTimeout(() => {
+                this.setState({
+                    share: true
+                });
+            }, 5000);
+        }
     }
     showModal = key => (e) => {
         e.preventDefault(); // 修复 Android 上点击穿透
@@ -74,6 +84,11 @@ class Show extends React.Component {
             [key]: false,
             block: false
         });
+        setTimeout(() => {
+            this.setState({
+                share: true
+            });
+        }, 5000);
     }
     render() {
         return (
@@ -117,6 +132,10 @@ class Show extends React.Component {
                         <img style={{"display":"inline-block",width: "4.7rem",height:"2rem"}} src="http://www.cyikao.com/zg/webapp_kd19/images/ys-wx.png" alt="二维码"/>
                     </div>
                 </Modal>
+                <div className={this.state.share ? "share-area" : "share-area hidden"}>
+                    <p>分享朋友或朋友圈</p>
+                    <p>继续阅读</p>
+                </div>
             </div>
         )
     }

@@ -52,6 +52,7 @@
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
     </script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js "></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -67,4 +68,60 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(wxFun = function () {
+        var currentURL = window.location.href;
+
+        $.post('http://www.cyikao.com/api.php?op=wx', {
+            'url' : currentURL
+        }, function (data) {
+            data = JSON.parse(data);
+            var timestamp = data["timeStamp"];
+            var nonceStr = data["nonceStr"];
+            var signature = data["signature"];
+            var appId = data["appId"];
+            wx.config({
+                //                debug: true,
+                appId: appId, // 必填，公众号的唯一标识
+                timestamp: timestamp, // 必填，生成签名的时间戳
+                nonceStr: nonceStr, // 必填，生成签名的随机串
+                signature: signature,// 必填，签名，见附录1
+                jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+            wx.ready(function () {
+                //                alert('初始化分享');
+                //分享给朋友
+
+                var sharelike = 'http://www.cyikao.com/zg/webapp_kd19'; // 分享链接
+
+                //分享到微信好友
+                wx.onMenuShareAppMessage({
+                    title: '测试标题', // 分享标题
+                    desc: '测试描述', // 分享描述
+                    link: sharelike, // 分享链接
+                    imgUrl: 'http://www.cyikao.com/zg/webapp_kd19/images/wx-share.jpg', // 分享图标
+                    success: function () {
+                      // 用户确认分享后执行的回调函数
+                      $('.share-area').hide();
+                    }
+                });
+                //分享到朋友圈
+                wx.onMenuShareTimeline({
+                    title: '测试标题', // 分享标题
+                    link: sharelike, // 分享链接
+                    imagesUrl: 'http://www.cyikao.com/zg/webapp_kd19/img/wx-share.jpg', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        $('.share-area').hide();
+                    }
+                });
+            });
+            wx.error(function (res) {
+                console.log(res)
+            });
+        }, 'json');
+    });
+</script>
 </html>
