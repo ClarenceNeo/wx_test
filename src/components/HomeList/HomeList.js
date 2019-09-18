@@ -81,7 +81,7 @@ const Section = props => (
             <SectionInfo>
                 <SectionCommend className={ parseInt(props.commend) ? "" : "hide" }>推荐</SectionCommend>
                 <SectionHot className={ parseInt(props.hot) ? "" : "hide" }>热门</SectionHot>
-                <SectionView>阅读：{props.view}</SectionView>
+                <SectionView>阅读：{ props.view }</SectionView>
             </SectionInfo>
         </SectionLeft>
         <SectionRight image={props.image}></SectionRight>

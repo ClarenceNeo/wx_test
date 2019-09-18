@@ -6,42 +6,48 @@ import "./MenuBar.css"
 
 const subject = [
     {
-        label: '助理医师',
-        value: '助理医师',
+        label: '中药',
+        value: '中药',
         children: [
             {
-                label: '临床执业助理医师（笔试）',
-                value: 'lczlyisbs',
+                label: '中药一',
+                value: 'zy1',
             },
             {
-                label: '临床执业助理医师（实践技能）',
-                value: 'lczlyissj',
+                label: '中药二',
+                value: 'zy2',
             },
             {
-                label: '中医执业助理医师（笔试）',
-                value: '中医执业助理医师（笔试）',
-            },
-            {
-                label: '中医执业助理医师（实践技能）',
-                value: '中西医执业助理医师（笔试）',
+                label: '中药综',
+                value: 'zyz',
             },
         ],
     },
     {
-        label: '执业医师',
-        value: '执业医师',
+        label: '西药',
+        value: '西药',
         children: [
             {
-                label: '临床执业助理医师（笔试）',
-                value: '临床执业医师（实践技能）',
+                label: '西药一',
+                value: 'xy1',
             },
             {
-                label: '中医执业医师（笔试）',
-                value: '中医执业医师（实践技能）',
+                label: '西药二',
+                value: 'xy2',
             },
             {
-                label: '中西医执业医师（笔试）',
-                value: '中西医执业医师（实践技能）',
+                label: '西药综',
+                value: 'xyz',
+            }
+        ],
+    },
+    {
+        label: '法规',
+        value: '法规',
+        children: [
+            {
+                label: '法规',
+                value: 'fg',
             }
         ],
     },

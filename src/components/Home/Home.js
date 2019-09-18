@@ -26,8 +26,8 @@ export class Home extends Component {
     }
     componentWillMount() {
         const initialState = {
-            pickerValue: ["助理医师","lczlyisbs"],
-            pickerTitle: "临床执业助理医师（笔试）",
+            pickerValue: ["中药","zy1"],
+            pickerTitle: "中药一",
             scrollTop: 0
         };
         if(!localStorage.getItem('zgyk_kd19_state')){
