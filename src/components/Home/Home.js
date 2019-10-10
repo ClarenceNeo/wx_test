@@ -30,16 +30,16 @@ export class Home extends Component {
             pickerTitle: "中药一",
             scrollTop: 0
         };
-        if(!localStorage.getItem('zgyk_kd19_state')){
+        if(!localStorage.getItem('zgyk_yaoskd19_state')){
             this.setState({
                 list: subjectList[initialState.pickerValue[1]].articleList,
                 bestList: subjectList[initialState.pickerValue[1]].articleList.filter(item=>item.best == "1"),
                 pickerValue: initialState.pickerValue,
                 pickerTitle: initialState.pickerTitle
             })
-            localStorage.setItem('zgyk_kd19_state', JSON.stringify(initialState));
+            localStorage.setItem('zgyk_yaoskd19_state', JSON.stringify(initialState));
         } else {
-            const updateState = JSON.parse(localStorage.getItem('zgyk_kd19_state'));
+            const updateState = JSON.parse(localStorage.getItem('zgyk_yaoskd19_state'));
             this.setState({
                 list: subjectList[updateState.pickerValue[1]].articleList,
                 bestList: subjectList[updateState.pickerValue[1]].articleList.filter(item=>item.best == "1"),
@@ -50,7 +50,7 @@ export class Home extends Component {
 
     }
     componentWillUnmount() {
-        // const updateState = JSON.parse(localStorage.getItem('zgyk_kd19_state'));
+        // const updateState = JSON.parse(localStorage.getItem('zgyk_yaoskd19_state'));
     }
     handlePicker = (value) => {
         const updateState = {
@@ -58,7 +58,7 @@ export class Home extends Component {
             pickerTitle: subjectList[value[1]].name,
             scrollTop: 0
         }
-        localStorage.setItem('zgyk_kd19_state', JSON.stringify(updateState));
+        localStorage.setItem('zgyk_yaoskd19_state', JSON.stringify(updateState));
         this.setState({
             pickerValue: value,
             pickerTitle: subjectList[value[1]].name,
@@ -77,13 +77,13 @@ export class Home extends Component {
                             <WhiteSpace />
                                 <Banner />
                             <WhiteSpace />
-                            <HomeList list={this.state.list} cat={this.state.pickerValue[1]} />
+                            <HomeList list={this.state.list.reverse()} cat={this.state.pickerValue[1]} />
                         </div>
                         <div style={{ "display": "flex", "flexDirection": "column"}} className="home-tab-content">
                             <WhiteSpace />
                                 <Banner />
                             <WhiteSpace />
-                            <HomeList list={this.state.bestList} cat={this.state.pickerValue[1]} />
+                            <HomeList list={this.state.bestList.reverse()} cat={this.state.pickerValue[1]} />
                         </div>
                     </Tabs>
                 </div>

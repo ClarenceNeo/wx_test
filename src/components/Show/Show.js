@@ -63,7 +63,7 @@ class Show extends React.Component {
                 this.setState({
                     share: true
                 });
-            }, 5000);
+            }, 50000);
         }
     }
     showModal = key => (e) => {
@@ -95,7 +95,7 @@ class Show extends React.Component {
             this.setState({
                 share: true
             });
-        }, 5000);
+        }, 50000);
     }
     render() {
         return (

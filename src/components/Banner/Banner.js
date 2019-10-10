@@ -5,16 +5,20 @@ export class Banner extends React.Component {
   state = {
     data: [
       {
-        imgUrl: 'AiyWuByWklrrUDlFignR',
-        link: 'http://www.cyikao.com'
+        imgUrl: 'banner1',
+        link: 'https://ke.qq.com/course/package/19557?tuin=b7d499ed'
       },
       {
-        imgUrl: 'TekJlZRVCjLFexlOCuWn',
-        link: 'http://www.cyikao.com'
+        imgUrl: 'banner2',
+        link: 'https://ke.qq.com/course/package/19556?tuin=b7d499ed'
       },
       {
-        imgUrl: 'IJOtIlfsYdTyaDTRVrLI',
-        link: 'http://www.cyikao.com'
+        imgUrl: 'banner3',
+        link: 'https://ke.qq.com/course/package/19559?tuin=b7d499ed'
+      },
+      {
+        imgUrl: 'banner4',
+        link: 'https://ke.qq.com/course/package/19558?tuin=b7d499ed'
       }],
   }
   componentDidMount() {
@@ -41,7 +45,7 @@ export class Banner extends React.Component {
               style={{ display: 'inline-block', width: '100%', height: "2.3rem" }}
             >
               <img
-                src={`https://zos.alipayobjects.com/rmsportal/${val.imgUrl}.png`}
+                src={`http://www.cyikao.com/zg/webapp_kd19/images/${val.imgUrl}.jpg`}
                 alt=""
                 style={{ width: '100%', verticalAlign: 'top' }}
                 onLoad={() => {
