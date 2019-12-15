@@ -96,13 +96,13 @@
                 //                alert('初始化分享');
                 //分享给朋友
 
-                var sharelike = 'http://www.cyikao.com/zg/webapp_kd19'; // 分享链接
+                var sharelink = 'http://www.cyikao.com/zg/webapp_kd19'; // 分享链接
 
                 //分享到微信好友
                 wx.onMenuShareAppMessage({
-                    title: '测试标题', // 分享标题
-                    desc: '测试描述', // 分享描述
-                    link: sharelike, // 分享链接
+                    title: '药师考前500个精华知识点', // 分享标题
+                    desc: '临考前重难点梳理讲述，冲击预测，直击考点； 针对性、专业性强，侧重重难点记忆；考前提分再助力！！', // 分享描述
+                    link: sharelink, // 分享链接
                     imgUrl: 'http://www.cyikao.com/zg/webapp_kd19/images/wx-share.jpg', // 分享图标
                     success: function () {
                       // 用户确认分享后执行的回调函数
@@ -111,9 +111,9 @@
                 });
                 //分享到朋友圈
                 wx.onMenuShareTimeline({
-                    title: '测试标题', // 分享标题
-                    link: sharelike, // 分享链接
-                    imagesUrl: 'http://www.cyikao.com/zg/webapp_kd19/img/wx-share.jpg', // 分享图标
+                    title: '药师考前500个精华知识点', // 分享标题
+                    link: sharelink, // 分享链接
+                    imgUrl: 'http://www.cyikao.com/zg/webapp_kd19/images/wx-share.jpg', // 分享图标
                     success: function () {
                         // 用户确认分享后执行的回调函数
                         $('.share-area').hide();
